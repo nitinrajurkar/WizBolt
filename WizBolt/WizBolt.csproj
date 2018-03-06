@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B8B51B2-52DD-476D-945A-2936ED2706B9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WizBolt</RootNamespace>
+    <AssemblyName>WizBolt</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WizBolt.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile>bin\Release\WizBolt.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>WizBolt.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CButtonLib">
+      <HintPath>Controls\CButtonLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeVendor.Controls">
+      <HintPath>Controls\CodeVendor.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="LabelEx">
+      <HintPath>..\..\..\Theory\CSharp\Controls\Label\Fancy Custom Label Class (LabelEx)\C#\LabelEx\LabelEx\bin\Release\LabelEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SQLite.Designer">
+      <HintPath>C:\Program Files\System.Data.SQLite\2013\bin\SQLite.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\System.Data.SQLite\2013\bin\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\System.Data.SQLite\2013\bin\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\System.Data.SQLite\2013\bin\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoltProjectData.cs">
+      <DependentUpon>BoltProjectData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BoltProjectData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoltProjectData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DateCultures.cs" />
+    <Compile Include="FancyLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Help\About_WizBolt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\About_WizBolt.Designer.cs">
+      <DependentUpon>About_WizBolt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LTF.Designer.cs">
+      <DependentUpon>LTF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project.Designer.cs">
+      <DependentUpon>Project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectView.Designer.cs">
+      <DependentUpon>ProjectView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportApp.Designer.cs">
+      <DependentUpon>ReportApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ApplicationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ApplicationList.Designer.cs">
+      <DependentUpon>ApplicationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SummaryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\SummaryReport.Designer.cs">
+      <DependentUpon>SummaryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialTools\Add_SpecialTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpecialTools\Add_SpecialTool.Designer.cs">
+      <DependentUpon>Add_SpecialTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialTools\Modify_SpecialTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpecialTools\Modify_SpecialTool.Designer.cs">
+      <DependentUpon>Modify_SpecialTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialTools\SpecialToolsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpecialTools\SpecialToolsList.Designer.cs">
+      <DependentUpon>SpecialToolsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WizBoltMainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WizBoltMainFrame.Designer.cs">
+      <DependentUpon>WizBoltMainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Help\About_WizBolt.resx">
+      <DependentUpon>About_WizBolt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LTF.resx">
+      <DependentUpon>LTF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PipeJointReport.rdlc" />
+    <EmbeddedResource Include="Project.resx">
+      <DependentUpon>Project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectView.resx">
+      <DependentUpon>ProjectView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReportApp.resx">
+      <DependentUpon>ReportApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ApplicationList.rdlc" />
+    <EmbeddedResource Include="Reports\ApplicationList.resx">
+      <DependentUpon>ApplicationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SummaryReport.rdlc" />
+    <EmbeddedResource Include="Reports\SummaryReport.resx">
+      <DependentUpon>SummaryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecialTools\Add_SpecialTool.resx">
+      <DependentUpon>Add_SpecialTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecialTools\Modify_SpecialTool.resx">
+      <DependentUpon>Modify_SpecialTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecialTools\SpecialToolsList.resx">
+      <DependentUpon>SpecialToolsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizBoltMainFrame.resx">
+      <DependentUpon>WizBoltMainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BoltProjectData.xsc">
+      <DependentUpon>BoltProjectData.xsd</DependentUpon>
+    </None>
+    <None Include="BoltProjectData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BoltProjectData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BoltProjectData.xss">
+      <DependentUpon>BoltProjectData.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\SQLite.Designer.ChangePasswordDialog.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.ChangeScriptDialog.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.Design.ColumnsMultiSelectEditor.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.Editors.AutoCompleteCell.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.Editors.AutoCompleteColumn.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.Editors.AutoCompleteEditingControl.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.Editors.DesignerDocBase.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.Editors.TableDesignerDoc.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.Editors.ViewDesignerDoc+EnumWindowsCallback.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.Editors.ViewDesignerDoc.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.SQLiteConnectionUIControl.datasource" />
+    <None Include="Properties\DataSources\SQLite.Designer.TableNameDialog.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Views_Grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Views_Page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Views_Tabular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search06.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powermasterIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project_Save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powermaster-logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_CylindricalBlue05Text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearCircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PD_Format.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintGasket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintGraph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintProject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project_New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project_Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProjectNew_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonRedwithText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonRedCorrectwithText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\In_sq.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sequence_Full.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sequence_half.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sequence_quarter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PM_LineLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy-disk-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TorqueMultiplier.JPEG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StressGraphLegend.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StressGraphLegend01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StressGraphLegend02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_32.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_36.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_40.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_44.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_48.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_52.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_56.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange025_60.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_32.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_36.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_40.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_44.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_48.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_52.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_56.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange050_60.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_32.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_36.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_40.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_44.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_48.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_52.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_56.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flange100_60.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_32.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_36.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_44.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_48.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_52.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_56.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_60.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlangeTorque_40.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Panel.jpg" />
+    <None Include="Resources\Warning.jpg" />
+    <None Include="Resources\ApplicationDelete.jpg" />
+    <None Include="Resources\ApplicationModify.jpg" />
+    <None Include="Resources\ApplicationNew.jpg" />
+    <None Include="Resources\JobCard.jpg" />
+    <None Include="Resources\JobList.jpg" />
+    <None Include="Resources\MainStrip.jpg" />
+    <None Include="Resources\ProjectDelete.jpg" />
+    <None Include="Resources\ProjectModify.jpg" />
+    <None Include="Resources\ProjectNew.jpg" />
+    <None Include="Resources\ProjectOpen.jpg" />
+    <None Include="Resources\ProjectRemove.jpg" />
+    <None Include="Resources\ProjectSave.jpg" />
+    <None Include="Resources\ProjectSaveAs.jpg" />
+    <None Include="Resources\Quit.jpg" />
+    <None Include="Resources\ProjectClose.jpg" />
+    <None Include="Resources\JobRegister.png" />
+    <None Include="Resources\powermaster_stripedlogo.jpg" />
+    <None Include="Resources\Pyramid_Single.jpg" />
+    <None Include="Resources\Final_Color_Logo_Tiny.jpg" />
+    <None Include="Resources\WizodysseyTitle.jpg" />
+    <None Include="Resources\WizBoltTitle.jpg" />
+    <None Include="Resources\WizBoltComMedium.jpg" />
+    <Content Include="WizBolt.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
